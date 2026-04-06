@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diggibyte – About Us</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0a0e1a; --bg2: #111827; --bg3: #1a2235;
+  --card: #141c2e; --border: #1e2d45;
+  --text: #e8edf5; --text2: #7a8ba8;
+  --primary: #2563eb; --primary-glow: rgba(37,99,235,0.25);
+  --secondary: #10b981; --warning: #f59e0b; --danger: #ef4444;
+  --purple: #8b5cf6; --orange: #f97316;
+  --header-h: 64px; --radius: 14px;
+  --shadow: 0 4px 24px rgba(0,0,0,0.4);
+}
+[data-theme="light"] {
+  --bg: #f0f4fb; --bg2: #e8edf7; --bg3: #dce4f0;
+  --card: #ffffff; --border: #d0daea;
+  --text: #0f172a; --text2: #64748b;
+  --primary-glow: rgba(37,99,235,0.1);
+  --shadow: 0 4px 24px rgba(0,0,0,0.08);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Syne', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ===== HEADER ===== */
+.about-header {
+  background: var(--card);
+  border-bottom: 1px solid var(--border);
+  padding: 0 40px;
+  height: var(--header-h);
+  display: flex; align-items: center; justify-content: space-between;
+  position: sticky; top: 0; z-index: 50;
+}
+.brand { display: flex; align-items: center; gap: 10px; }
+.brand-logo-box {
+  width: 36px; height: 36px;
+  background: #fff; border-radius: 9px;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+}
+.brand-name { font-size: 16px; font-weight: 800; }
+.brand-name span { color: var(--orange); }
+.header-right { display: flex; gap: 8px; align-items: center; }
+
+.btn {
+  padding: 8px 16px; border-radius: 8px;
+  font-family: 'Syne'; font-size: 12px; font-weight: 600;
+  border: none; cursor: pointer;
+  display: flex; align-items: center; gap: 6px; transition: all 0.2s;
+}
+.btn-ghost { background: var(--bg2); color: var(--text); border: 1px solid var(--border); }
+.btn-ghost:hover { background: var(--bg3); }
+.btn-logout { background: transparent; color: var(--text2); border: 1px solid var(--border); }
+.btn-logout:hover { background: var(--danger); color: #fff; border-color: var(--danger); }
+.enter-btn {
+  background: linear-gradient(135deg, var(--orange), #ea580c);
+  color: #fff; border: none; border-radius: 10px;
+  padding: 10px 22px; font-family: 'Syne'; font-size: 13px; font-weight: 700;
+  cursor: pointer; transition: all 0.2s;
+  display: flex; align-items: center; gap: 6px;
+}
+.enter-btn:hover { opacity: 0.9; transform: translateY(-1px); }
+
+/* ===== HERO ===== */
+.hero {
+  background: linear-gradient(135deg, #0a0e1a 0%, #111827 50%, #0f1929 100%);
+  padding: 90px 40px 70px;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+  position: relative; overflow: hidden;
+}
+.hero::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 50% 0%, rgba(37,99,235,0.22), transparent 70%);
+}
+.hero::after {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 80% 100%, rgba(249,115,22,0.08), transparent 60%);
+}
+.hero-badge {
+  display: inline-block;
+  background: rgba(249,115,22,0.15);
+  border: 1px solid rgba(249,115,22,0.4);
+  color: var(--orange);
+  font-family: 'JetBrains Mono'; font-size: 10px; letter-spacing: 2px;
+  text-transform: uppercase; padding: 5px 16px; border-radius: 20px;
+  margin-bottom: 22px; position: relative;
+}
+.hero h1 {
+  font-size: 44px; font-weight: 800; line-height: 1.08;
+  margin-bottom: 18px; position: relative;
+  letter-spacing: -0.5px;
+}
+.hero h1 span { color: var(--orange); }
+.hero p {
+  color: var(--text2); font-size: 16px;
+  max-width: 640px; margin: 0 auto 36px;
+  line-height: 1.75; position: relative;
+}
+.stats-row {
+  display: flex; gap: 48px; justify-content: center;
+  flex-wrap: wrap; margin-top: 40px; position: relative;
+}
+.stat { text-align: center; }
+.stat-val { font-size: 40px; font-weight: 800; color: var(--orange); line-height: 1; }
+.stat-lbl {
+  font-family: 'JetBrains Mono'; font-size: 10px;
+  color: var(--text2); margin-top: 6px; letter-spacing: 0.5px;
+}
+
+/* ===== BODY ===== */
+.about-body { max-width: 1120px; margin: 0 auto; padding: 60px 40px; }
+.section { margin-bottom: 60px; }
+.section-badge {
+  display: inline-block;
+  background: var(--primary-glow); border: 1px solid var(--primary);
+  color: var(--primary); font-family: 'JetBrains Mono'; font-size: 10px;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  padding: 4px 12px; border-radius: 6px; margin-bottom: 14px;
+}
+.section h2 { font-size: 26px; font-weight: 800; margin-bottom: 16px; }
+.section p {
+  color: var(--text2); line-height: 1.9; font-size: 14px;
+  max-width: 800px;
+}
+
+/* Vision / Mission */
+.vm-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 10px; }
+.vm-card {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 28px 26px;
+  transition: border-color 0.2s;
+}
+.vm-card:hover { border-color: var(--primary); }
+.vm-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+.vm-card p { color: var(--text2); font-size: 13px; line-height: 1.75; }
+
+/* Services */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px; margin-top: 10px;
+}
+.svc-card {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 22px 20px;
+  transition: all 0.2s;
+}
+.svc-card:hover { border-color: var(--primary); transform: translateY(-3px); box-shadow: var(--shadow); }
+.svc-icon { font-size: 26px; margin-bottom: 10px; }
+.svc-title { font-size: 13px; font-weight: 700; margin-bottom: 6px; }
+.svc-desc { font-size: 12px; color: var(--text2); line-height: 1.65; }
+
+/* Team */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
+  gap: 16px; margin-top: 10px;
+}
+.team-card {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 26px 16px;
+  text-align: center; transition: all 0.2s;
+}
+.team-card:hover { border-color: var(--orange); transform: translateY(-4px); box-shadow: 0 8px 32px rgba(249,115,22,0.15); }
+.team-avatar {
+  width: 56px; height: 56px; border-radius: 50%;
+  margin: 0 auto 14px;
+  background: linear-gradient(135deg, var(--primary), var(--purple));
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px; font-weight: 800; color: #fff;
+  box-shadow: 0 4px 14px rgba(37,99,235,0.3);
+}
+.team-name { font-size: 13px; font-weight: 700; margin-bottom: 5px; }
+.team-role { font-family: 'JetBrains Mono'; font-size: 10px; color: var(--text2); line-height: 1.45; }
+
+/* Industries */
+.industry-grid {
+  display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px;
+}
+.industry-chip {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 8px; padding: 8px 16px;
+  font-size: 13px; font-weight: 600;
+  transition: all 0.2s; display: flex; align-items: center; gap: 6px;
+}
+.industry-chip:hover { border-color: var(--orange); color: var(--orange); }
+
+/* Contact */
+.contact-row { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 10px; }
+.contact-chip {
+  display: flex; align-items: center; gap: 10px;
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 10px; padding: 12px 18px;
+  font-family: 'JetBrains Mono'; font-size: 12px; color: var(--text2);
+  transition: border-color 0.2s;
+}
+.contact-chip:hover { border-color: var(--primary); color: var(--text); }
+.contact-chip .ci { font-size: 17px; }
+
+/* CTA */
+.cta-block {
+  text-align: center; padding: 20px 0 10px;
+  border-top: 1px solid var(--border);
+  margin-top: 48px;
+}
+.cta-block p { color: var(--text2); font-size: 13px; margin-bottom: 20px; }
+
+/* Footer */
+.about-footer {
+  background: var(--card); border-top: 1px solid var(--border);
+  padding: 20px 40px;
+  display: flex; justify-content: space-between; align-items: center;
+  font-family: 'JetBrains Mono'; font-size: 10px; color: var(--text2);
+  flex-wrap: wrap; gap: 8px;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+@media (max-width: 900px) {
+  .about-body { padding: 36px 20px; }
+  .hero { padding: 56px 20px 48px; }
+  .hero h1 { font-size: 28px; }
+  .vm-grid { grid-template-columns: 1fr; }
+  .about-header { padding: 0 20px; }
+  .stats-row { gap: 28px; }
+}
+@media (max-width: 500px) {
+  .hero h1 { font-size: 24px; }
+  .stat-val { font-size: 30px; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="about-header">
+  <div class="brand">
+    <div class="brand-logo-box">
+      <svg width="26" height="26" viewBox="0 0 48 48" fill="none">
+        <path d="M10 8L10 40L26 40C36 40 42 33 42 24C42 15 36 8 26 8Z" fill="#FF6B00"/>
+        <path d="M10 8L10 40L24 40C33 40 38 33 38 24C38 15 33 8 24 8Z" fill="#FF8C00"/>
+        <path d="M30 16L18 26L25 26L18 38L32 24L25 24Z" fill="white" opacity="0.95"/>
+      </svg>
+    </div>
+    <div class="brand-name">Diggibyte <span>Technologies</span></div>
+  </div>
+  <div class="header-right">
+    <span style="font-family:'JetBrains Mono';font-size:11px;color:var(--text2);">Welcome, <span id="userName" style="color:var(--orange);font-weight:600;"></span></span>
+    <button class="btn btn-ghost" onclick="toggleTheme()">🌓</button>
+    <button class="btn btn-logout" onclick="logout()">← Logout</button>
+    <button class="enter-btn" onclick="goDashboard()">🛡️ Enter Dashboard →</button>
+  </div>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge">About Us</div>
+  <h1>DIGGIBYTE <span>TECHNOLOGIES</span></h1>
+  <p>A Bengaluru-based digital transformation company specializing in data engineering, advanced analytics, artificial intelligence, cloud modernization, and real-time intelligence.</p>
+  <div class="stats-row">
+    <div class="stat"><div class="stat-val">170+</div><div class="stat-lbl">Skilled Professionals</div></div>
+    <div class="stat"><div class="stat-val">60+</div><div class="stat-lbl">Successful Projects</div></div>
+    <div class="stat"><div class="stat-val">5+</div><div class="stat-lbl">Industries Served</div></div>
+    <div class="stat"><div class="stat-val">7K+</div><div class="stat-lbl">LinkedIn Followers</div></div>
+    <div class="stat"><div class="stat-val">51–200</div><div class="stat-lbl">Employees</div></div>
+  </div>
+</div>
+
+<!-- BODY -->
+<div class="about-body">
+
+  <!-- WHO WE ARE -->
+  <div class="section">
+    <div class="section-badge">Who We Are</div>
+    <h2>Transforming Businesses Through Data & AI</h2>
+    <p>Diggibyte is a Bengaluru-based digital transformation company specializing in data engineering, advanced analytics, artificial intelligence, cloud modernization, and real-time intelligence. Backed by a team of 170+ skilled professionals, we've delivered 60+ successful projects across industries like BFSI, telecom, retail, energy, and manufacturing.</p>
+    <br>
+    <p>Our deep expertise in platforms like Databricks' Lakehouse, along with our custom strategies and domain knowledge, help clients migrate, modernize, and monetize their data at speed and scale.</p>
+  </div>
+
+  <!-- VISION & MISSION -->
+  <div class="section">
+    <div class="section-badge">Our Purpose</div>
+    <h2>Vision & Mission</h2>
+    <div class="vm-grid">
+      <div class="vm-card">
+        <h3>🎯 Our Vision</h3>
+        <p>To be a leading global force in digital modernization, enabling businesses to excel in the digital age through innovative technologies.</p>
+      </div>
+      <div class="vm-card">
+        <h3>🚀 Our Mission</h3>
+        <p>Empower organizations globally to harness the full potential of data and AI, driving smarter decision-making and transformative digital advancements.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- INDUSTRIES -->
+  <div class="section">
+    <div class="section-badge">Industries We Serve</div>
+    <h2>Across Sectors & Domains</h2>
+    <div class="industry-grid">
+      <div class="industry-chip">🏦 BFSI</div>
+      <div class="industry-chip">📡 Telecom</div>
+      <div class="industry-chip">🛍️ Retail</div>
+      <div class="industry-chip">⚡ Energy</div>
+      <div class="industry-chip">🏭 Manufacturing</div>
+      <div class="industry-chip">🏥 Healthcare</div>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <div class="section">
+    <div class="section-badge">IT Solutions</div>
+    <h2>Our Services</h2>
+    <div class="services-grid">
+      <div class="svc-card"><div class="svc-icon">🏠</div><div class="svc-title">Databricks Package Solutions</div><div class="svc-desc">End-to-end Databricks Lakehouse implementation and optimization for enterprise scale.</div></div>
+      <div class="svc-card"><div class="svc-icon">🔄</div><div class="svc-title">Catalog Migration</div><div class="svc-desc">Seamless migration of data catalogs with zero data loss and minimal downtime.</div></div>
+      <div class="svc-card"><div class="svc-icon">💾</div><div class="svc-title">Data Migration Solutions</div><div class="svc-desc">Structured migration from legacy systems to modern cloud-native architectures.</div></div>
+      <div class="svc-card"><div class="svc-icon">🤖</div><div class="svc-title">Data Science & AI</div><div class="svc-desc">Advanced ML models, GenAI, and Mosaic AI solutions for intelligent automation.</div></div>
+      <div class="svc-card"><div class="svc-icon">☁️</div><div class="svc-title">Cloud Modernization</div><div class="svc-desc">Accelerate your cloud journey with Azure, AWS, and GCP expertise.</div></div>
+      <div class="svc-card"><div class="svc-icon">📊</div><div class="svc-title">Analytics & BI</div><div class="svc-desc">Dynamic dashboards and real-time intelligence through Power BI, Tableau, and custom tools.</div></div>
+    </div>
+  </div>
+
+  <!-- TEAM -->
+  <div class="section">
+    <div class="section-badge">Leadership</div>
+    <h2>Meet Our Team</h2>
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="team-avatar">W</div>
+        <div class="team-name">William R</div>
+        <div class="team-role">Chief Executive Officer</div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">A</div>
+        <div class="team-name">Anuj Kumar Sen</div>
+        <div class="team-role">Chief Technology Officer</div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">L</div>
+        <div class="team-name">Lawrance Amburose</div>
+        <div class="team-role">MD & Chief Financial Officer</div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">S</div>
+        <div class="team-name">Sekhar PVR</div>
+        <div class="team-role">Chief Operating Officer</div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">S</div>
+        <div class="team-name">Srinivas Satyanarayana</div>
+        <div class="team-role">Chief Data Officer</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+  <div class="section">
+    <div class="section-badge">Contact Us</div>
+    <h2>Get In Touch</h2>
+    <div class="contact-row">
+      <div class="contact-chip"><span class="ci">📞</span> +91-8110889199</div>
+      <div class="contact-chip"><span class="ci">📧</span> Info@diggibyte.com</div>
+      <div class="contact-chip"><span class="ci">📧</span> sales@diggibyte.com</div>
+      <div class="contact-chip"><span class="ci">🌐</span> diggibyte.com</div>
+      <div class="contact-chip"><span class="ci">📍</span> Bengaluru, Karnataka, India</div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-block">
+    <p>Ready to begin the IT Infrastructure & Security Audit?</p>
+    <button class="enter-btn" style="margin:0 auto;font-size:15px;padding:14px 40px;" onclick="goDashboard()">
+      🛡️ Enter IT Audit Dashboard →
+    </button>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="about-footer">
+  <span>© 2025 Diggibyte Technologies Private Limited · Data Infrastructure and Analytics · Bengaluru, KA</span>
+  <span>Privacy Policy | Cookies Policy</span>
+</footer>
+
+<script>
+  // Auth guard — redirect to login if not authenticated
+  if (sessionStorage.getItem('db_auth') !== 'true') {
+    window.location.href = '1_login.html';
+  }
+
+  // Show logged-in username
+  const u = sessionStorage.getItem('db_user') || 'User';
+  document.getElementById('userName').textContent = u.charAt(0).toUpperCase() + u.slice(1);
+
+  function goDashboard() {
+    window.location.href = '3_dashboard.html';
+  }
+
+  function logout() {
+    sessionStorage.removeItem('db_auth');
+    sessionStorage.removeItem('db_user');
+    window.location.href = '1_login.html';
+  }
+
+  function toggleTheme() {
+    const t = document.documentElement.dataset.theme;
+    document.documentElement.dataset.theme = t === 'dark' ? 'light' : 'dark';
+  }
+</script>
+</body>
+</html>
